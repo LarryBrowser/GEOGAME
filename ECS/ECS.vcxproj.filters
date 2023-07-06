@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Vec2.cpp" />
+    <ClCompile Include="src\Entity.cpp" />
+    <ClCompile Include="src\EntityManager.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\Vec2.h" />
+    <ClInclude Include="src\EntityManager.h" />
+    <ClInclude Include="src\Entity.h" />
+    <ClInclude Include="src\CTransform.h" />
+    <ClInclude Include="src\CShape.h" />
+    <ClInclude Include="src\CBBox.h" />
+    <ClInclude Include="src\CName.h" />
+    <ClInclude Include="src\Components.h" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\AlResource.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\Export.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\InputSoundFile.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\Listener.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\Music.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\OutputSoundFile.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\Sound.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\SoundBuffer.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\SoundBufferRecorder.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\SoundFileFactory.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\SoundFileReader.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\SoundFileWriter.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\SoundRecorder.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\SoundSource.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio\SoundStream.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Audio.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Config.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\GpuPreference.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\BlendMode.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\CircleShape.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Color.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\ConvexShape.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Drawable.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Export.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Font.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Glsl.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Glyph.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Image.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\PrimitiveType.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Rect.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\RectangleShape.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\RenderStates.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\RenderTarget.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\RenderTexture.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\RenderWindow.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Shader.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Shape.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Sprite.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Text.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Texture.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Transform.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Transformable.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\Vertex.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\VertexArray.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\VertexBuffer.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics\View.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Graphics.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Main.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Network\Export.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Network\Ftp.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Network\Http.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Network\IpAddress.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Network\Packet.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Network\Socket.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Network\SocketHandle.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Network\SocketSelector.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Network\TcpListener.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Network\TcpSocket.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Network\UdpSocket.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Network.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\OpenGL.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\Clock.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\Err.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\Export.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\FileInputStream.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\InputStream.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\Lock.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\MemoryInputStream.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\Mutex.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\NativeActivity.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\NonCopyable.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\Sleep.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\String.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\Thread.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\ThreadLocal.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\ThreadLocalPtr.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\Time.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\Utf.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\Vector2.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System\Vector3.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\System.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\Clipboard.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\Context.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\ContextSettings.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\Cursor.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\Event.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\Export.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\GlResource.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\Joystick.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\Keyboard.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\Mouse.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\Sensor.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\Touch.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\VideoMode.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\Window.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\WindowHandle.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window\WindowStyle.hpp" />
+    <ClInclude Include="Dependencies\include\SFML\Window.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="src\Config.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="src\Simple_Creative.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Dependencies\include\SFML\Audio\SoundFileFactory.inl" />
+    <None Include="Dependencies\include\SFML\Graphics\Glsl.inl" />
+    <None Include="Dependencies\include\SFML\Graphics\Rect.inl" />
+    <None Include="Dependencies\include\SFML\System\String.inl" />
+    <None Include="Dependencies\include\SFML\System\Thread.inl" />
+    <None Include="Dependencies\include\SFML\System\ThreadLocalPtr.inl" />
+    <None Include="Dependencies\include\SFML\System\Utf.inl" />
+    <None Include="Dependencies\include\SFML\System\Vector2.inl" />
+    <None Include="Dependencies\include\SFML\System\Vector3.inl" />
+  </ItemGroup>
+</Project>
