@@ -1,0 +1,8 @@
+Package: boost-qvm
+Version: 1.83.0
+Depends: boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 6f536059a9506c69ae1338d1c7b061ed8d8b168cdbc8db239e40ca1a04934591
+Description: Boost qvm module
+Status: install ok half-installed

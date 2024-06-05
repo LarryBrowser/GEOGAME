@@ -1,0 +1,8 @@
+Package: boost-filesystem
+Version: 1.83.0
+Depends: boost-assert, boost-atomic, boost-build, boost-config, boost-container-hash, boost-core, boost-detail, boost-io, boost-iterator, boost-modular-build-helper, boost-predef, boost-smart-ptr, boost-system, boost-throw-exception, boost-type-traits, boost-vcpkg-helpers, boost-winapi, vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 2b34e27016a8e1b5b71562b2f6c24fb4043b6c662605b13f0e970ee63852c24d
+Description: Boost filesystem module
+Status: install ok half-installed

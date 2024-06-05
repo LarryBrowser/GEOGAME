@@ -1,0 +1,8 @@
+Package: boost-json
+Version: 1.83.0
+Depends: boost-align, boost-assert, boost-build, boost-config, boost-container, boost-container-hash, boost-core, boost-describe, boost-modular-build-helper, boost-mp11, boost-system, boost-throw-exception, boost-vcpkg-helpers, vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 9293dbc04b133d85505bcbbde6064bc0b44a9405e3fc2f7eb182e62fa51044ec
+Description: Boost json module
+Status: install ok half-installed

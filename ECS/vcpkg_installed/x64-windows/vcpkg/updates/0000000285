@@ -1,0 +1,8 @@
+Package: boost-leaf
+Version: 1.83.0
+Depends: boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: b60f39b4a5af6c8871e315615477f11dfc92feafbd405b4e50b4eae60d52320e
+Description: Boost leaf module
+Status: install ok installed

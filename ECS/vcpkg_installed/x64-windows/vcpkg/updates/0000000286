@@ -1,0 +1,8 @@
+Package: boost-lambda2
+Version: 1.83.0
+Depends: boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: d2db045bb598ff1830da5106d28c047c4f77531efe448b3aa3a280aa5ea41cfb
+Description: Boost lambda2 module
+Status: install ok half-installed

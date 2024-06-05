@@ -1,0 +1,8 @@
+Package: boost-outcome
+Version: 1.83.0
+Depends: boost-config, boost-exception, boost-system, boost-throw-exception, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: e94ac46d655a004bd3b5cd889432a117053af65749af5eb3fe377d3a8d468769
+Description: Boost outcome module
+Status: install ok installed

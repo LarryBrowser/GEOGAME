@@ -1,0 +1,8 @@
+Package: boost-timer
+Version: 1.83.0
+Depends: boost-build, boost-config, boost-io, boost-modular-build-helper, boost-predef, boost-vcpkg-helpers, vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: d26cd68b24f4c031a1ed225c1fab69212c07bd4b49d77decc3ed6d33afe1985b
+Description: Boost timer module
+Status: install ok installed

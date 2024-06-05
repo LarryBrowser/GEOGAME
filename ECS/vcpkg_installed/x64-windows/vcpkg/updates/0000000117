@@ -1,0 +1,8 @@
+Package: boost-thread
+Version: 1.83.0
+Depends: boost-algorithm, boost-assert, boost-atomic, boost-bind, boost-build, boost-chrono, boost-concept-check, boost-config, boost-container, boost-container-hash, boost-core, boost-date-time, boost-exception, boost-function, boost-intrusive, boost-io, boost-iterator, boost-lexical-cast, boost-modular-build-helper, boost-move, boost-optional, boost-predef, boost-preprocessor, boost-smart-ptr, boost-static-assert, boost-system, boost-throw-exception, boost-tuple, boost-type-traits, boost-utility, boost-vcpkg-helpers, boost-winapi, vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: c5390fca1090adb2a0899582bdf73a50a068952454d26671b94dceac2da8bf58
+Description: Boost thread module
+Status: install ok installed

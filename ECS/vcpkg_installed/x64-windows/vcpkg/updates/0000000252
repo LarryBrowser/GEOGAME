@@ -1,0 +1,8 @@
+Package: boost-pfr
+Version: 1.83.0
+Depends: boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: b299bb5bdf054930fabba2570a49209dd7c3dcf7da956d1a8dab53f7761673d3
+Description: Boost pfr module
+Status: install ok half-installed

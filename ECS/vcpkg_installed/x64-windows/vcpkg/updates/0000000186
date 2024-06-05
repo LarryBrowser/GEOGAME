@@ -1,0 +1,8 @@
+Package: boost-safe-numerics
+Version: 1.83.0
+Depends: boost-concept-check, boost-config, boost-core, boost-integer, boost-logic, boost-mp11, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 14722106cdaf4fe7ed198bcc8085913f41b5cf84c485a483b629ed71e8cab2dc
+Description: Boost safe_numerics module
+Status: install ok half-installed

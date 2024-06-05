@@ -1,0 +1,8 @@
+Package: boost-typeof
+Version: 1.83.0
+Depends: boost-config, boost-preprocessor, boost-type-traits, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: a19f769bcc72f9e19ce04bda738d8c4b55f4ffaf0cf46ba190de50fbfc8159a9
+Description: Boost typeof module
+Status: install ok installed

@@ -1,0 +1,8 @@
+Package: boost-compatibility
+Version: 1.83.0
+Depends: boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 84321ab71f85ecd03948082af208a4990a6a3b2824e80d82096e84b2a04222e7
+Description: Boost compatibility module
+Status: install ok half-installed

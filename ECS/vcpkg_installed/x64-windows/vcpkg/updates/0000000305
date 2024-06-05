@@ -1,0 +1,8 @@
+Package: boost-hof
+Version: 1.83.0
+Depends: boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 62165de2599c3d46ad31a0fe26a6acf0fcbab7f1fbf3f3e477ac80b7cd3346a3
+Description: Boost hof module
+Status: install ok installed

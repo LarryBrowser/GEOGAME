@@ -1,22 +1,62 @@
 #include <iostream>
 #include <string>
 #include "Components.h"
+#include <tuple>
 
+class EntityManager;
+
+typedef std::tuple<
+	CTransform,
+	CShape,
+	CCollusion,
+	CInput,
+	CScore,
+	CLifeSpan> ComponentTuple;
+//15:36 TIMESTAMP SE SEE SESESESESESE LOOOK!!!
 class Entity {
-	std::string  m_tag{ "default" };
-	bool         m_active{ true };
-	const        size_t m_id{};
+	friend class EntityManager;
+
+	std::string		m_tag{ "default" };
+	bool			m_active{ true };
+	size_t			m_id{};
+	ComponentTuple	m_components;
 public:
-	std::shared_ptr<CTransform> cTransform;
-	std::shared_ptr<CShape> cShape;
-	std::shared_ptr<CCollusion> cCollusion;
-	std::shared_ptr<CInput> cInput;
-	std::shared_ptr<CScore> cScore;
-	std::shared_ptr<CLifeSpan> cLifeSpan;
-	
 	Entity(size_t id, const std::string& tag);
 
+	size_t id() const;
 	const std::string& tag() const;
 	bool active();
-	void kill() { m_active = false; }
+	void kill();
+
+	template<typename T>
+	bool hasComponent() const
+	{
+		return getComponent<T>().has;
+	}
+
+	template<typename T, typename... TArgs>
+	T& addComponent(TArgs&& ... mArgs)
+	{
+		auto& component = getComponent<T>();
+		component = T(std::forward<TArgs>(mArgs)...);
+		component.has = true;
+		return component;
+	}
+
+	template<typename T>
+	T& getComponent()
+	{
+		return std::get<T>(m_components);
+	}
+	template<typename T>
+	const T& getComponent() const
+	{
+		return std::get<T>(m_components);
+	}
+
+	template<typename T>
+	T& removeComponent()
+	{
+		getComponent<T>() = T();
+	}
 };

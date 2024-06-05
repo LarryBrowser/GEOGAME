@@ -1,0 +1,8 @@
+Package: boost-statechart
+Version: 1.83.0
+Depends: boost-assert, boost-bind, boost-config, boost-conversion, boost-core, boost-detail, boost-function, boost-mpl, boost-smart-ptr, boost-static-assert, boost-thread, boost-type-traits, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 4cde57bd76857fc925dd9d508b89f500e351f04c98225cda2711eef290a4c54a
+Description: Boost statechart module
+Status: install ok half-installed

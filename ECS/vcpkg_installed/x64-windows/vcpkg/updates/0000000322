@@ -1,0 +1,8 @@
+Package: boost-coroutine2
+Version: 1.83.0
+Depends: boost-assert, boost-config, boost-context, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 9c69813c0933d3b77034126dfed23584f3eb8763576f9578ea4fa2e863aeedc2
+Description: Boost coroutine2 module
+Status: install ok half-installed

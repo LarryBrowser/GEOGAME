@@ -70,6 +70,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -143,10 +146,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Action.cpp" />
+    <ClCompile Include="src\Animation.cpp" />
+    <ClCompile Include="src\Assets.cpp" />
     <ClCompile Include="src\Entity.cpp" />
     <ClCompile Include="src\EntityManager.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Physics.cpp" />
+    <ClCompile Include="src\Scene.cpp" />
+    <ClCompile Include="src\Scene_Menu.cpp" />
+    <ClCompile Include="src\Scene_Play.cpp" />
     <ClCompile Include="src\Vec2.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -248,6 +258,9 @@
     <ClInclude Include="Dependencies\include\SFML\Window\Window.hpp" />
     <ClInclude Include="Dependencies\include\SFML\Window\WindowHandle.hpp" />
     <ClInclude Include="Dependencies\include\SFML\Window\WindowStyle.hpp" />
+    <ClInclude Include="src\Action.h" />
+    <ClInclude Include="src\Animation.h" />
+    <ClInclude Include="src\Assets.h" />
     <ClInclude Include="src\CBBox.h" />
     <ClInclude Include="src\CName.h" />
     <ClInclude Include="src\Components.h" />
@@ -256,6 +269,10 @@
     <ClInclude Include="src\Entity.h" />
     <ClInclude Include="src\EntityManager.h" />
     <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\Physics.h" />
+    <ClInclude Include="src\Scene.h" />
+    <ClInclude Include="src\Scene_Menu.h" />
+    <ClInclude Include="src\Scene_Play.h" />
     <ClInclude Include="src\Vec2.h" />
   </ItemGroup>
   <ItemGroup>

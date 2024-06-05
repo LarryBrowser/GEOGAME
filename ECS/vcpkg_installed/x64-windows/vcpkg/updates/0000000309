@@ -1,0 +1,8 @@
+Package: boost-heap
+Version: 1.83.0
+Depends: boost-array, boost-assert, boost-bind, boost-concept-check, boost-config, boost-core, boost-intrusive, boost-iterator, boost-parameter, boost-static-assert, boost-throw-exception, boost-type-traits, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 115c3599fd7e5b3bf63cccea130d07321ee7758ddc47ea421a1a18910d12cb33
+Description: Boost heap module
+Status: install ok installed

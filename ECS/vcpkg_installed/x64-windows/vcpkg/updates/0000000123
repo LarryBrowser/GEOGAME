@@ -1,0 +1,8 @@
+Package: boost-phoenix
+Version: 1.83.0
+Depends: boost-assert, boost-bind, boost-config, boost-core, boost-function, boost-fusion, boost-mpl, boost-predef, boost-preprocessor, boost-proto, boost-range, boost-smart-ptr, boost-type-traits, boost-utility, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 466dd3401b85f37d3978e8ae26743eb1c260a3783fdea078ad661e2e55473b91
+Description: Boost phoenix module
+Status: install ok installed

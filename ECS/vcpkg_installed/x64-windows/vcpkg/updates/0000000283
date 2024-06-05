@@ -1,0 +1,8 @@
+Package: boost-local-function
+Version: 1.83.0
+Depends: boost-config, boost-mpl, boost-preprocessor, boost-scope-exit, boost-type-traits, boost-typeof, boost-utility, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 38d4afdb74e6aa0886d5f28a96a370938d4728f9e1fc2e38a45ec700bb87584f
+Description: Boost local_function module
+Status: install ok installed

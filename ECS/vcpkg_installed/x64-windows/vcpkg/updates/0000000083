@@ -1,0 +1,8 @@
+Package: boost-conversion
+Version: 1.83.0
+Depends: boost-assert, boost-config, boost-core, boost-smart-ptr, boost-throw-exception, boost-type-traits, boost-typeof, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: db1f3a682387d9eddfeac771b5a6ed82a62031f3bcaab2a78f2712507e862664
+Description: Boost conversion module
+Status: install ok installed

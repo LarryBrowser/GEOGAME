@@ -1,0 +1,8 @@
+Package: boost-contract
+Version: 1.83.0
+Depends: boost-any, boost-assert, boost-build, boost-config, boost-core, boost-exception, boost-function, boost-function-types, boost-modular-build-helper, boost-mpl, boost-optional, boost-preprocessor, boost-smart-ptr, boost-static-assert, boost-thread, boost-type-traits, boost-typeof, boost-utility, boost-vcpkg-helpers, vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: a45348c6b12ee1b03989907a26e9e862a687b35cc7bf4deab79d0858b3fe6aa2
+Description: Boost contract module
+Status: install ok half-installed

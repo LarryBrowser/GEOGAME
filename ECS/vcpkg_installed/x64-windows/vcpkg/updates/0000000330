@@ -1,0 +1,8 @@
+Package: boost-compat
+Version: 1.83.0
+Depends: boost-assert, boost-config, boost-throw-exception, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 3d057d306da69194f5d22688515d106c31e62e8f4caa52cf02241bd4f62190e1
+Description: Boost compat module
+Status: install ok half-installed

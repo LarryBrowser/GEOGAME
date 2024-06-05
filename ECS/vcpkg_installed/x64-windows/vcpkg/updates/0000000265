@@ -1,0 +1,8 @@
+Package: boost-nowide
+Version: 1.83.0
+Depends: boost-build, boost-config, boost-filesystem, boost-modular-build-helper, boost-vcpkg-helpers, vcpkg-cmake
+Architecture: x64-windows
+Multi-Arch: same
+Abi: b180c0295e0e918cbbcaa6de086bf433deb65f12982e9d6e1400948e45e711f9
+Description: Boost nowide module
+Status: install ok installed

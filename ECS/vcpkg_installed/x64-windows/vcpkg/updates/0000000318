@@ -1,0 +1,8 @@
+Package: boost-dll
+Version: 1.83.0
+Depends: boost-assert, boost-config, boost-core, boost-filesystem, boost-function, boost-move, boost-predef, boost-smart-ptr, boost-spirit, boost-static-assert, boost-system, boost-throw-exception, boost-type-index, boost-type-traits, boost-vcpkg-helpers, boost-winapi
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 63d70fe1791f1b82e77d08e2b7e19ee9825bf813541c1149010464418ea5de98
+Description: Boost dll module
+Status: install ok half-installed

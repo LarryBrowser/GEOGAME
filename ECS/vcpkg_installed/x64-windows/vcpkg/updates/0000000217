@@ -1,0 +1,9 @@
+Package: python3
+Version: 3.11.5
+Port-Version: 3
+Depends: bzip2, expat, libffi, liblzma, openssl, sqlite3, vcpkg-msbuild, zlib
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 910ac6bfa03e998d30cc47abe345cfed25b50647c90164d373680161f94a5398
+Description: The Python programming language
+Status: install ok installed

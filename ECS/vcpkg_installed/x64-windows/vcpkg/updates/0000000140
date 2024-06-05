@@ -1,0 +1,8 @@
+Package: boost-vmd
+Version: 1.83.0
+Depends: boost-preprocessor, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: fed55d5def7f8daa6cb071f206dcaa4891f2d873e5f5d056fd2e0323c3aa0814
+Description: Boost vmd module
+Status: install ok half-installed

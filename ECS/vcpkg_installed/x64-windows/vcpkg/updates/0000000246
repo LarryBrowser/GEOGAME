@@ -1,0 +1,8 @@
+Package: boost-process
+Version: 1.83.0
+Depends: boost-algorithm, boost-asio, boost-config, boost-core, boost-filesystem, boost-fusion, boost-io, boost-iterator, boost-move, boost-optional, boost-system, boost-throw-exception, boost-tokenizer, boost-type-index, boost-type-traits, boost-utility, boost-vcpkg-helpers, boost-winapi
+Architecture: x64-windows
+Multi-Arch: same
+Abi: ec43e3f42fe27dc1ebc83a35b489280a642dff7b0ed3e8b4e4d90e4309fcd206
+Description: Boost process module
+Status: install ok half-installed

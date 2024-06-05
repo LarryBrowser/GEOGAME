@@ -6,6 +6,13 @@
     <ClCompile Include="src\Entity.cpp" />
     <ClCompile Include="src\EntityManager.cpp" />
     <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\Action.cpp" />
+    <ClCompile Include="src\Animation.cpp" />
+    <ClCompile Include="src\Assets.cpp" />
+    <ClCompile Include="src\Physics.cpp" />
+    <ClCompile Include="src\Scene.cpp" />
+    <ClCompile Include="src\Scene_Play.cpp" />
+    <ClCompile Include="src\Scene_Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h" />
@@ -115,6 +122,13 @@
     <ClInclude Include="Dependencies\include\SFML\Window\WindowHandle.hpp" />
     <ClInclude Include="Dependencies\include\SFML\Window\WindowStyle.hpp" />
     <ClInclude Include="Dependencies\include\SFML\Window.hpp" />
+    <ClInclude Include="src\Action.h" />
+    <ClInclude Include="src\Animation.h" />
+    <ClInclude Include="src\Assets.h" />
+    <ClInclude Include="src\Physics.h" />
+    <ClInclude Include="src\Scene.h" />
+    <ClInclude Include="src\Scene_Play.h" />
+    <ClInclude Include="src\Scene_Menu.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="src\Config.txt" />

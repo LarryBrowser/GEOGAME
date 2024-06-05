@@ -1,0 +1,8 @@
+Package: boost-icl
+Version: 1.83.0
+Depends: boost-assert, boost-concept-check, boost-config, boost-container, boost-core, boost-date-time, boost-detail, boost-iterator, boost-move, boost-mpl, boost-range, boost-rational, boost-static-assert, boost-type-traits, boost-utility, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 76026b14504885940dd4069284a84abce5bc5bc800ab6125de3d9e80c6bed11a
+Description: Boost icl module
+Status: install ok installed

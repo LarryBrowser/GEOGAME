@@ -1,0 +1,8 @@
+Package: boost-polygon
+Version: 1.83.0
+Depends: boost-config, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 332f63087094cdf0ce32f5210bc35626f86477f69b1dfd178cf86228d8797e59
+Description: Boost polygon module
+Status: install ok half-installed

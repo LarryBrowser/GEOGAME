@@ -1,0 +1,8 @@
+Package: boost-interval
+Version: 1.83.0
+Depends: boost-config, boost-detail, boost-logic, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: a112bdeaff221a77280051f632457c5fe62d45e000d37eaddd6c47dd7a90f308
+Description: Boost interval module
+Status: install ok installed

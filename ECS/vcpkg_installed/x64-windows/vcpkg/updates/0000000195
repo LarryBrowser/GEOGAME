@@ -1,0 +1,8 @@
+Package: pkgconf
+Version: 2.1.0
+Depends: vcpkg-tool-meson
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 14b8461d3458497c9b169d3a3e8c7abc0a2d41ac0dc2eb12b9241cc3ff8cdbda
+Description: pkgconf is a program which helps to configure compiler and linker flags for development libraries. It is similar to pkg-config from freedesktop.org.
+Status: install ok installed

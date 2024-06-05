@@ -1,0 +1,8 @@
+Package: boost-signals2
+Version: 1.83.0
+Depends: boost-assert, boost-bind, boost-config, boost-core, boost-function, boost-iterator, boost-mpl, boost-optional, boost-parameter, boost-preprocessor, boost-smart-ptr, boost-throw-exception, boost-tuple, boost-type-traits, boost-variant, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 883baec021b2c1b7165f6153714eeb8862d4a4d0aa1834f14629faa5d97dfc0a
+Description: Boost signals2 module
+Status: install ok half-installed

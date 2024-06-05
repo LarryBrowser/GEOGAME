@@ -1,0 +1,8 @@
+Package: boost-hana
+Version: 1.83.0
+Depends: boost-config, boost-core, boost-fusion, boost-mpl, boost-tuple, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: e0ba3564390a05969955c844564ff6de13da426f74299f5c1265eb60bf364094
+Description: Boost hana module
+Status: install ok installed

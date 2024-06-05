@@ -1,0 +1,8 @@
+Package: boost-static-string
+Version: 1.83.0
+Depends: boost-assert, boost-config, boost-container-hash, boost-core, boost-static-assert, boost-throw-exception, boost-utility, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 967376ce40e17698cf8b7f3684e5cb13afd873ccef3172f3708982f96691c6ab
+Description: Boost static_string module
+Status: install ok installed

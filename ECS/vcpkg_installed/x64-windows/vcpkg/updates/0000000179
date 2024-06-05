@@ -1,0 +1,8 @@
+Package: boost-sort
+Version: 1.83.0
+Depends: boost-config, boost-core, boost-range, boost-static-assert, boost-type-traits, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 583278ad7452b6979042051b570afef096e8041722875edbb3f0e32906b71906
+Description: Boost sort module
+Status: install ok installed

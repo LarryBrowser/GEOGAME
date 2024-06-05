@@ -1,0 +1,8 @@
+Package: boost-convert
+Version: 1.83.0
+Depends: boost-config, boost-core, boost-function-types, boost-lexical-cast, boost-math, boost-mpl, boost-optional, boost-parameter, boost-range, boost-spirit, boost-type-traits, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 27604dc2e87996d774aa12c6d63f4c28b3a03f5195255104ed1043e19cb1fa9a
+Description: Boost convert module
+Status: install ok half-installed

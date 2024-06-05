@@ -1,0 +1,8 @@
+Package: boost-beast
+Version: 1.83.0
+Depends: boost-asio, boost-assert, boost-bind, boost-config, boost-container, boost-container-hash, boost-core, boost-endian, boost-intrusive, boost-logic, boost-mp11, boost-optional, boost-preprocessor, boost-smart-ptr, boost-static-assert, boost-static-string, boost-system, boost-throw-exception, boost-type-index, boost-type-traits, boost-vcpkg-helpers, boost-winapi
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 82da5504fa84b6f8d52d37fecaad72c6fc5e00c4453b566452a6d38d5d22d812
+Description: Boost beast module
+Status: install ok half-installed

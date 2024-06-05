@@ -1,0 +1,8 @@
+Package: boost-yap
+Version: 1.83.0
+Depends: boost-hana, boost-preprocessor, boost-type-index, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 31d0f3d10528d2e175f402bf4575f1ebdc0ae5d9a35bc80cffa03d9e6edb45d7
+Description: Boost yap module
+Status: install ok half-installed

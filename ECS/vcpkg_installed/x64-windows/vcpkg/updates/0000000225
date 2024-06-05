@@ -1,0 +1,8 @@
+Package: boost-foreach
+Version: 1.83.0
+Depends: boost-config, boost-core, boost-iterator, boost-mpl, boost-range, boost-type-traits, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 10a6e8bf7e1d6147531402670e2be024f127bc108f86c74d541e0ebb21cf1665
+Description: Boost foreach module
+Status: install ok installed

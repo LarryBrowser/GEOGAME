@@ -1,0 +1,8 @@
+Package: boost-interprocess
+Version: 1.83.0
+Depends: boost-assert, boost-config, boost-container, boost-core, boost-intrusive, boost-move, boost-static-assert, boost-type-traits, boost-unordered, boost-vcpkg-helpers, boost-winapi
+Architecture: x64-windows
+Multi-Arch: same
+Abi: bfcc64aa5b572ef8930c5736e6849be00ccb482ea513c75031d9c4beedda857e
+Description: Boost interprocess module
+Status: install ok installed

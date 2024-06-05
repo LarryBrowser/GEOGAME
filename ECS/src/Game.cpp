@@ -93,13 +93,14 @@ void Game::spawnPlayer()
 	auto entity = m_entities.addEntity("player");
 	float mx = m_Window.getSize().x / 2.0f;
 	float my = m_Window.getSize().y / 2.0f;
-	entity->cTransform = std::make_shared<CTransform>(Vec2(mx, my),
+	entity->addComponent<CTransform>(Vec2(mx, my),
 		Vec2(0.0f, 0.0f), 0.0f);
-	entity->cShape = std::make_shared<CShape>(m_playerConfig.SR, m_playerConfig.V, 
+	entity->hasComponent<CCollusion>();
+	entity->addComponent<CShape>(m_playerConfig.SR, m_playerConfig.V, 
 		sf::Color(m_playerConfig.FR, m_playerConfig.FG, m_playerConfig.FB),
 		sf::Color(m_playerConfig.OR, m_playerConfig.OG, m_playerConfig.OB), m_playerConfig.OT);
-	entity->cInput = std::make_shared<CInput>();
-	entity->cCollusion = std::make_shared<CCollusion>(m_playerConfig.CR);
+	entity->addComponent<CInput>();
+	entity->addComponent<CCollusion>(m_playerConfig.CR);
 	m_player = entity;
 }
 
@@ -112,7 +113,7 @@ void Game::spawnEnemy()
 		ex = static_cast<float>(RNG(m_enemyConfig.CR, m_Window.getSize().x - m_enemyConfig.CR));
 		ey = static_cast<float>(RNG(m_enemyConfig.CR, m_Window.getSize().y - m_enemyConfig.CR));
 		Vec2 vec(ex, ey);
-		if (sqrt(vec.length(m_player->cTransform->pos)) >= m_player->cCollusion->radius * 5)
+		if (sqrt(vec.length(m_player->getComponent<CTransform>().pos) >= m_player->getComponent<CCollusion>().radius * 5))
 		{
 			break;
 		}
@@ -126,47 +127,50 @@ void Game::spawnEnemy()
 	float xDir = RNG(0, 1) ? true : -1;
 	float yDir = RNG(0, 1) ? true : -1;
 
-	entity->cTransform = std::make_shared<CTransform>(Vec2(ex, ey),
+	entity->addComponent<CTransform>((Vec2(ex, ey)),
 		Vec2(speedVal * xDir, speedVal * yDir), 0.0f);
-	entity->cShape = std::make_shared<CShape>(m_enemyConfig.SR, verticeVal, sf::Color(FR, FG, FB),
+	entity->addComponent<CShape>(m_enemyConfig.SR, verticeVal, sf::Color(FR, FG, FB),
 		sf::Color(m_enemyConfig.OR, m_enemyConfig.OG, m_enemyConfig.OB), m_enemyConfig.OT);
-	entity->cCollusion = std::make_shared<CCollusion>(m_enemyConfig.CR);
-	entity->cLifeSpan = std::make_shared<CLifeSpan>(20*60);
+	entity->addComponent<CCollusion>(m_enemyConfig.CR);
+	entity->addComponent<CLifeSpan>(20*60);
 	m_lastEnemySpawnTime = m_currentFrame;
 }
 
 void Game::spawnSmallEnemies()
 {
 	auto entity = m_entities.addEntity("enemy");
-	entity->cLifeSpan = std::make_shared<CLifeSpan>(m_enemyConfig.L);
+	entity->addComponent<CLifeSpan>(m_enemyConfig.L);
 }
 
 void Game::sMovement()
 {
 	for (auto e : m_entities.getEntities())
 	{
-		e->cTransform->pos.x += e->cTransform->velocity.x;
-		e->cTransform->pos.y += e->cTransform->velocity.y;
+		auto& e_transform = e->getComponent<CTransform>();
+		e_transform.pos.x += e_transform.velocity.x;
+		e_transform.pos.y += e_transform.velocity.y;
 	}
-	m_player->cTransform->velocity = { 0, 0 };
-	if (m_player->cInput->up)
+	auto& m_player_transform = m_player->getComponent<CTransform>();
+	auto& m_player_input = m_player->getComponent<CInput>();
+	m_player_transform.velocity = { 0, 0 };
+	if (m_player_input.up)
 	{
-		m_player->cTransform->velocity.y = -1 * m_playerConfig.S;
-	}
-
-	if (m_player->cInput->left)
-	{
-		m_player->cTransform->velocity.x = -1 * m_playerConfig.S;
+		m_player_transform.velocity.y = -1 * m_playerConfig.S;
 	}
 
-	if (m_player->cInput->down)
+	if (m_player_input.left)
 	{
-		m_player->cTransform->velocity.y = m_playerConfig.S;
+		m_player_transform.velocity.x = -1 * m_playerConfig.S;
+	}
+
+	if (m_player_input.down)
+	{
+		m_player_transform.velocity.y = m_playerConfig.S;
 	}
 	
-	if (m_player->cInput->right)
+	if (m_player_input.right)
 	{
-		m_player->cTransform->velocity.x = m_playerConfig.S;
+		m_player_transform.velocity.x = m_playerConfig.S;
 	}
 }
 
@@ -174,18 +178,18 @@ void Game::spawnBullet(std::shared_ptr<Entity> entity, const Vec2& target)
 {
 	auto bullet = m_entities.addEntity("bullet");
 
-	Vec2 BDir = target - entity->cTransform->pos; // bullet direction
+	Vec2 BDir = target - entity->getComponent<CTransform>().pos; // bullet direction
 	BDir.normalize();
 
-	Vec2 SPos = entity->cTransform->pos + BDir; // spawn position
+	Vec2 SPos = entity->getComponent<CTransform>().pos + BDir; // spawn position
 
-	bullet->cTransform = std::make_shared<CTransform>(Vec2(SPos), 
+	bullet->addComponent<CTransform>(Vec2(SPos), 
 		Vec2(BDir.x*m_bulletConfig.S, BDir.y*m_bulletConfig.S), 0.0f);
-	bullet->cShape = std::make_shared<CShape>(m_bulletConfig.SR, m_bulletConfig.V,
+	bullet->addComponent<CShape>(m_bulletConfig.SR, m_bulletConfig.V,
 		sf::Color(m_bulletConfig.FR, m_bulletConfig.FG, m_bulletConfig.FB), 
 		sf::Color(m_bulletConfig.OR, m_bulletConfig.OG, m_bulletConfig.OB), m_bulletConfig.OT);
-	bullet->cCollusion = std::make_shared<CCollusion>(m_bulletConfig.CR);
-	bullet->cLifeSpan = std::make_shared<CLifeSpan>(m_bulletConfig.L);
+	bullet->addComponent<CCollusion>(m_bulletConfig.CR);
+	bullet->addComponent<CLifeSpan>(m_bulletConfig.L);
 }
 
 void Game::spawnSpecialWeapon()
@@ -202,6 +206,7 @@ void Game::spawnSpecialWeapon()
 void Game::sUserInput()
 {
 	sf::Event e;
+	auto& player_inputs = m_player->getComponent<CInput>();
 	while (m_Window.pollEvent(e))
 	{
 		if (e.type == sf::Event::Closed)
@@ -215,91 +220,50 @@ void Game::sUserInput()
 			{
 			case sf::Keyboard::W:
 				std::cout << "W key Pressed\n";
-				m_player->cInput->up = true;
+				player_inputs.up = true;
 				break;
-			default: break;
-			}
-		}
-
-		if (e.type == sf::Event::KeyPressed)
-		{
-			switch (e.key.code)
-			{
 			case sf::Keyboard::A:
 				std::cout << "A key Pressed\n";
-				m_player->cInput->left = true;
+				player_inputs.left = true;
 				break;
-			default: break;
-			}
-		}
-
-		if (e.type == sf::Event::KeyPressed)
-		{
-			switch (e.key.code)
-			{
 			case sf::Keyboard::S:
 				std::cout << "S key Pressed\n";
-				m_player->cInput->down = true;
+				player_inputs.down = true;
+				break;
+			case sf::Keyboard::D:
+				std::cout << "D key Pressed\n";
+				player_inputs.right = true;
+				break;
+			case sf::Keyboard::Escape:
+				m_running = false;
+				break;
+			case sf::Keyboard::Space:
+				std::cout << "Space key Pressed\n";
+				spawnSpecialWeapon();
 				break;
 			default: break;
 			}
 		}
 
-		if (e.type == sf::Event::KeyPressed)
-		{
-			switch (e.key.code)
-			{
-			case sf::Keyboard::D:
-				std::cout << "D key Pressed\n";
-				m_player->cInput->right = true;
-				break;
-			default: break;
-			}
-		}
-		
 		if (e.type == sf::Event::KeyReleased)
 		{
 			switch (e.key.code)
 			{
 			case sf::Keyboard::W:
 				std::cout << "W key Released\n";
-				m_player->cInput->up = false;
+				player_inputs.up = false;
 				break;
-			default: break;
-			}
-		}
-
-		if (e.type == sf::Event::KeyReleased)
-		{
-			switch (e.key.code)
-			{
 			case sf::Keyboard::A:
 				std::cout << "A key Released\n";
-				m_player->cInput->left = false;
+				player_inputs.left = false;
 				break;
-			default: break;
-			}
-		}
-
-		if (e.type == sf::Event::KeyReleased)
-		{
-			switch (e.key.code)
-			{
 			case sf::Keyboard::S:
 				std::cout << "S key Released\n";
-				m_player->cInput->down = false;
+				player_inputs.down = false;
 				break;
-			default: break;
-			}
-		}
-
-		if (e.type == sf::Event::KeyReleased)
-		{
-			switch (e.key.code)
-			{
 			case sf::Keyboard::D:
 				std::cout << "D key Released\n";
-				m_player->cInput->right = false;
+				player_inputs.right = false;
 				break;
 			default: break;
 			}
@@ -309,7 +273,7 @@ void Game::sUserInput()
 		{
 			switch (e.mouseButton.button)
 			{
-			case sf::Mouse::Left: std::cout << "Left mouse button clicked at: (" 
+			case sf::Mouse::Left: std::cout << "Left mouse button clicked at: ("
 				<< e.mouseButton.x << ',' << e.mouseButton.y << ")\n";
 				spawnBullet(m_player, Vec2(e.mouseButton.x, e.mouseButton.y));
 				break;
@@ -319,24 +283,12 @@ void Game::sUserInput()
 			default: break;
 			}
 		}
-
-		if (e.type == sf::Event::KeyPressed)
-		{
-			switch (e.key.code)
-			{
-			case sf::Keyboard::Space:
-				std::cout << "Space key Pressed\n";
-				spawnSpecialWeapon();
-				break;
-			default: break;
-			}
-		}
 	}
 }
 
 void Game::sRender()
 {
-	m_Window.clear();
+	m_Window.clear(sf::Color(101.0f, 89.0f, 248.0f));
 	std::stringstream ss;
 	ss << m_score;
 	std::string score{ ss.str() };
@@ -344,12 +296,14 @@ void Game::sRender()
 	m_Window.draw(m_text);
 	for (auto& e : m_entities.getEntities())
 	{
-		e->cShape->circle.setPosition(e->cTransform->pos.x, e->cTransform->pos.y);
-		e->cShape->circle.setRotation(e->cTransform->angle);
-		m_Window.draw(e->cShape->circle);
-		e->cTransform->angle += 1.0f;
+		auto& e_shape = e->getComponent<CShape>();
+		auto& e_transform = e->getComponent<CTransform>();
+		e_shape.circle.setPosition(e_transform.pos.x, e_transform.pos.y);
+		e_shape.circle.setRotation(e_transform.angle);
+		m_Window.draw(e_shape.circle);
+		e_transform.angle += 1.0f;
 	}
-	m_Window.display();;
+	m_Window.display();
 }
 
 void Game::sEnemySpawner()
@@ -364,47 +318,52 @@ void Game::sEnemySpawner()
 
 void Game::sCollusion()
 {
+	//3 is the amount of pixels decided for padding so that player doesn't look glitchy when pushing against the wall
 	for (auto e : m_entities.getEntities("enemy"))
 	{
-		if (e->cTransform->pos.x - e->cShape->circle.getRadius() <= 3 && e->cTransform->velocity.x < 0)
+		auto& e_transform = e->getComponent<CTransform>();
+		auto& e_shape = e->getComponent<CShape>();
+		if (e_transform.pos.x - e_shape.circle.getRadius() <= 3 && e_transform.velocity.x < 0)
 		{
-			e->cTransform->velocity.x *= -1;
+			e_transform.velocity.x *= -1;
 		}
-		if (e->cTransform->pos.y - e->cShape->circle.getRadius() <= 3 && e->cTransform->velocity.y < 0)
+		if (e_transform.pos.y - e_shape.circle.getRadius() <= 3 && e_transform.velocity.y < 0)
 		{
-			e->cTransform->velocity.y *= -1;
+			e_transform.velocity.y *= -1;
 		}
-		if (e->cTransform->pos.x + e->cShape->circle.getRadius() >= 
-			m_Window.getSize().x - 3 && e->cTransform->velocity.x > 0)
+		if (e_transform.pos.x + e_shape.circle.getRadius() >= 
+			m_Window.getSize().x - 3 && e_transform.velocity.x > 0)
 		{
-			e->cTransform->velocity.x *= -1;
+			e_transform.velocity.x *= -1;
 		}
-		if (e->cTransform->pos.y + e->cShape->circle.getRadius() >= 
-			m_Window.getSize().y - 3 && e->cTransform->velocity.y > 0)
+		if (e_transform.pos.y + e_shape.circle.getRadius() >= 
+			m_Window.getSize().y - 3 && e_transform.velocity.y > 0)
 		{
-			e->cTransform->velocity.y *= -1;
+			e_transform.velocity.y *= -1;
 		}
 	}
 
 	for (auto e : m_entities.getEntities("player"))
 	{
-		if (e->cTransform->pos.x - e->cShape->circle.getRadius() <= 3 && e->cTransform->velocity.x < 0)
+		auto& e_transform = e->getComponent<CTransform>();
+		auto& e_shape = e->getComponent<CShape>();
+		if (e_transform.pos.x - e_shape.circle.getRadius() <= 3 && e_transform.velocity.x < 0)
 		{
-			e->cTransform->velocity.x *= -1;
+			e_transform.velocity.x *= -1;
 		}
-		if (e->cTransform->pos.y - e->cShape->circle.getRadius() <= 3 && e->cTransform->velocity.y < 0)
+		if (e_transform.pos.y - e_shape.circle.getRadius() <= 3 && e_transform.velocity.y < 0)
 		{
-			e->cTransform->velocity.y *= -1;
+			e_transform.velocity.y *= -1;
 		}
-		if (e->cTransform->pos.x + e->cShape->circle.getRadius() >=
-			m_Window.getSize().x - 3 && e->cTransform->velocity.x > 0)
+		if (e_transform.pos.x + e_shape.circle.getRadius() >=
+			m_Window.getSize().x - 3 && e_transform.velocity.x > 0)
 		{
-			e->cTransform->velocity.x *= -1;
+			e_transform.velocity.x *= -1;
 		}
-		if (e->cTransform->pos.y + e->cShape->circle.getRadius() >=
-			m_Window.getSize().y - 3 && e->cTransform->velocity.y > 0)
+		if (e_transform.pos.y + e_shape.circle.getRadius() >=
+			m_Window.getSize().y - 3 && e_transform.velocity.y > 0)
 		{
-			e->cTransform->velocity.y *= -1;
+			e_transform.velocity.y *= -1;
 		}
 	}
 	float rd{}; //radius distance
@@ -412,10 +371,14 @@ void Game::sCollusion()
 
 	for (auto p : m_entities.getEntities("player"))
 	{
+		auto& p_transform = p->getComponent<CTransform>();
+		auto& p_collusion = p->getComponent<CCollusion>();
 		for (auto& e : m_entities.getEntities("enemy"))
 		{
-			rd = p->cCollusion->radius + e->cCollusion->radius;
-			vl = p->cTransform->pos.length(e->cTransform->pos);
+			auto& e_transform = e->getComponent<CTransform>();
+			auto& e_collusion = e->getComponent<CCollusion>();
+			rd = p_collusion.radius + e_collusion.radius;
+			vl = p_transform.pos.length(e_transform.pos);
 
 			if (rd * rd > vl)
 			{
@@ -429,10 +392,14 @@ void Game::sCollusion()
 
 	for (auto& b : m_entities.getEntities("bullet"))
 	{
+		auto& b_transform = b->getComponent<CTransform>();
+		auto& b_collusion = b->getComponent<CCollusion>();
 		for (auto& e : m_entities.getEntities("enemy"))
 		{
-			rd = b->cCollusion->radius + e->cCollusion->radius; 
-			vl = b->cTransform->pos.length(e->cTransform->pos);
+			auto& e_transform = e->getComponent<CTransform>();
+			auto& e_collusion = e->getComponent<CCollusion>();
+			rd = b_collusion.radius + e_collusion.radius; 
+			vl = b_transform.pos.length(e_transform.pos);
 
 			if (rd * rd > vl)
 			{
@@ -450,34 +417,38 @@ void Game::sLifespan()
 	float lsr{}; // Total-remaining lifespan ratio
 	for (auto& e : m_entities.getEntities("enemy"))
 	{
-		e->cLifeSpan->remaining--;
-		lsr = static_cast<float>(e->cLifeSpan->remaining) / e->cLifeSpan->total;
+		auto& e_lifespan = e->getComponent<CLifeSpan>();
+		auto& e_shape = e->getComponent<CShape>();
+		e_lifespan.remaining--;
+		lsr = static_cast<float>(e_lifespan.remaining) / e_lifespan.total;
 		//std::cout << "LSR: " << lsr << '\n';
-		sf::Color color = e->cShape->circle.getFillColor();
+		sf::Color color = e->getComponent<CShape>().circle.getFillColor();
 		color.a = lsr * 255.0f;
-		e->cShape->circle.setFillColor(color);
+		e_shape.circle.setFillColor(color);
 	}
 
 	for (auto& e : m_entities.getEntities("bullet"))
 	{
-		e->cLifeSpan->remaining--;
-		lsr = static_cast<float>(e->cLifeSpan->remaining) / e->cLifeSpan->total;
+		auto& e_lifespan = e->getComponent<CLifeSpan>();
+		auto& e_shape = e->getComponent<CShape>();
+		e_lifespan.remaining--;
+		lsr = static_cast<float>(e_lifespan.remaining) / e_lifespan.total;
 		std::cout << "LSR: " << lsr << '\n';
-		sf::Color color = e->cShape->circle.getFillColor();
+		sf::Color color = e_shape.circle.getFillColor();
 		color.a = lsr * 255.0f;
-		e->cShape->circle.setFillColor(color);
+		e_shape.circle.setFillColor(color);
 	}
 
 	for (auto& e : m_entities.getEntities("enemy"))
 	{
-		if (e->cLifeSpan->remaining <= 0)
+		if (e->getComponent<CLifeSpan>().remaining <= 0)
 		{
 			e->kill();
 		}
 	}
 	for (auto& e : m_entities.getEntities("bullet"))
 	{
-		if (e->cLifeSpan->remaining <= 0)
+		if (e->getComponent<CLifeSpan>().remaining <= 0)
 		{
 			e->kill();
 		}
@@ -504,7 +475,6 @@ void Game::run()
 			sCollusion();
 			sMovement();
 		}
-
 		update();
 		sRender();
 

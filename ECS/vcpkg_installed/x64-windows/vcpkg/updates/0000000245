@@ -1,0 +1,8 @@
+Package: boost-asio
+Version: 1.83.0
+Depends: boost-align, boost-array, boost-assert, boost-bind, boost-chrono, boost-config, boost-context, boost-core, boost-coroutine, boost-date-time, boost-exception, boost-function, boost-regex, boost-smart-ptr, boost-system, boost-throw-exception, boost-type-traits, boost-utility, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 065b8a4ee2cf58c691faecc0c7f595fdf1e5177ff6396c8ffeb596ce813c2132
+Description: Boost asio module
+Status: install ok installed

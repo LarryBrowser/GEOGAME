@@ -1,0 +1,8 @@
+Package: boost-crc
+Version: 1.83.0
+Depends: boost-array, boost-config, boost-integer, boost-type-traits, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 52acc9c2c753948ee4e71b6937fa5ef89f9784850883fd2d2e2cb293bdf208ce
+Description: Boost crc module
+Status: install ok half-installed

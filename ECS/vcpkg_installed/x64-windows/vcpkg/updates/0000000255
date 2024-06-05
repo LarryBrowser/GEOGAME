@@ -1,0 +1,8 @@
+Package: boost-parameter-python
+Version: 1.83.0
+Depends: boost-mpl, boost-parameter, boost-preprocessor, boost-python, boost-vcpkg-helpers
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 055cea02e667c9aed15dc3c596f60a7187004ebb3389220e4c2c94abb5862b22
+Description: Boost parameter_python module
+Status: install ok installed
